@@ -18,8 +18,8 @@ var serviceWorkerCode = fs.readFileSync(serviceWorkerPath);
 
 http.createServer(function (req, res) {
   if(req.url === pathToIntercept) {
-    res.end(serviceWorkerCode);
-    return;
+    res.setHeader('content-type', 'application/javascript');
+    return res.end(serviceWorkerCode);
   }
   req.pipe(request(squareSpaceUrl + req.url)).pipe(res);
 }).listen(port);
