@@ -7,7 +7,7 @@ var path = require('path');
 var serviceWorkerPath = process.env.SWPATH || path.join(__dirname, 'serviceworker.js');
 var squareSpaceUrl = process.env.SQUARESPACEURL || 'https://fiona-yelland-geys.squarespace.com';
 var port = +process.env.PORT || 1337;
-var pathToIntercept = process.env.PATHTOINTERCEPT || '/somefile.js';
+var pathToIntercept = process.env.PATHTOINTERCEPT || '/service-worker.js';
 
 console.log('listening on port ' + port);
 console.log('patch code should be at ' + serviceWorkerPath);
